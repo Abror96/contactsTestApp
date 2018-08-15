@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="6dp"
+    android:layout_marginStart="6dp"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+
+        <TextView
+            android:id="@+id/fullname_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp"
+            android:text="Аббасов Аброр Улугбекович"
+            android:textColor="@android:color/black"
+            android:textSize="23sp"
+            app:layout_constraintEnd_toStartOf="@+id/added_date_textview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/address_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Узбекистан, Фергана, ул. Бабура 35"
+            app:layout_constraintStart_toStartOf="@+id/fullname_textview"
+            app:layout_constraintTop_toBottomOf="@+id/fullname_textview" />
+
+        <TextView
+            android:id="@+id/email_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="abbasov894@gmail.com"
+            app:layout_constraintStart_toStartOf="@+id/address_textview"
+            app:layout_constraintTop_toBottomOf="@+id/address_textview" />
+
+        <TextView
+            android:id="@+id/cellphone_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="+998996099006"
+            app:layout_constraintStart_toStartOf="@+id/email_textview"
+            app:layout_constraintTop_toBottomOf="@+id/email_textview" />
+
+        <TextView
+            android:id="@+id/added_date_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="15/08/18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/phone_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="+998732444642"
+            app:layout_constraintStart_toStartOf="@+id/cellphone_textview"
+            app:layout_constraintTop_toBottomOf="@+id/cellphone_textview" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

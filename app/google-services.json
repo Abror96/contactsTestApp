@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "839802980597",
+    "firebase_url": "https://contactstestapp-aa18f.firebaseio.com",
+    "project_id": "contactstestapp-aa18f",
+    "storage_bucket": "contactstestapp-aa18f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839802980597:android:925b50880601f76a",
+        "android_client_info": {
+          "package_name": "com.example.abror.contactstestapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839802980597-9u97a7tt032oi227md7vi3qna3oj756o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.abror.contactstestapp",
+            "certificate_hash": "7e142d2b05e894dd793d3c97381998040247ed04"
+          }
+        },
+        {
+          "client_id": "839802980597-ntd9b6ft8r2jimdjlfmrjvu4prpmgk8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIo8M2LRkozb4vkfsncAoERFDE6daWnaI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839802980597-ntd9b6ft8r2jimdjlfmrjvu4prpmgk8c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
