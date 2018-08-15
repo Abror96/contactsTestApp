@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewContactActivity">
+
+
+    <EditText
+        android:id="@+id/fullname_editText_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="Enter full name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/address_editText_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Enter address"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/fullname_editText_add"
+        app:layout_constraintStart_toStartOf="@+id/fullname_editText_add"
+        app:layout_constraintTop_toBottomOf="@+id/fullname_editText_add" />
+
+    <EditText
+        android:id="@+id/email_edittext_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/address_editText_add"
+        app:layout_constraintStart_toStartOf="@+id/address_editText_add"
+        app:layout_constraintTop_toBottomOf="@+id/address_editText_add" />
+
+    <EditText
+        android:id="@+id/cellphone_edittext_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Enter cellphone"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/email_edittext_add"
+        app:layout_constraintStart_toStartOf="@+id/email_edittext_add"
+        app:layout_constraintTop_toBottomOf="@+id/email_edittext_add" />
+
+    <EditText
+        android:id="@+id/phone_edittext_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Enter phone number"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/cellphone_edittext_add"
+        app:layout_constraintStart_toStartOf="@+id/cellphone_edittext_add"
+        app:layout_constraintTop_toBottomOf="@+id/cellphone_edittext_add" />
+</android.support.constraint.ConstraintLayout>

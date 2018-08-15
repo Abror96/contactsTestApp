@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
-public class ContactAdapter extends FirestoreRecyclerAdapter<Contact, ContactAdapter.ContactHolder> {
-
+public class ContactAdapter extends FirestoreRecyclerAdapter<Contact, ContactHolder> {
 
     public ContactAdapter(@NonNull FirestoreRecyclerOptions<Contact> options) {
         super(options);
@@ -25,6 +25,14 @@ public class ContactAdapter extends FirestoreRecyclerAdapter<Contact, ContactAda
         holder.tvCellphone.setText(model.getCellphone());
         holder.tvPhone.setText(model.getPhone());
         holder.tvAddedDate.setText(model.getAdded_date());
+
+        holder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Toast.makeText(view.getContext(), "Position: " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @NonNull
@@ -33,26 +41,5 @@ public class ContactAdapter extends FirestoreRecyclerAdapter<Contact, ContactAda
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.contact_item,
                 viewGroup, false);
         return new ContactHolder(v);
-    }
-
-    class ContactHolder extends RecyclerView.ViewHolder {
-        TextView tvFullName;
-        TextView tvAddress;
-        TextView tvEmail;
-        TextView tvCellphone;
-        TextView tvPhone;
-        TextView tvAddedDate;
-
-
-        public ContactHolder(@NonNull View itemView) {
-            super(itemView);
-
-            tvFullName = itemView.findViewById(R.id.fullname_textview);
-            tvAddress = itemView.findViewById(R.id.address_textview);
-            tvEmail = itemView.findViewById(R.id.email_textview);
-            tvCellphone = itemView.findViewById(R.id.cellphone_textview);
-            tvPhone = itemView.findViewById(R.id.phone_textview);
-            tvAddedDate = itemView.findViewById(R.id.added_date_textview);
-        }
     }
 }
