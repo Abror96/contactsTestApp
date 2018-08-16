@@ -24,7 +24,6 @@ public class UpdateDataActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etCellphone;
     private EditText etPhone;
-    private Button updateButton;
 
     private Map<String, Object> updatedData;
 
@@ -50,7 +49,7 @@ public class UpdateDataActivity extends AppCompatActivity {
         etCellphone = findViewById(R.id.cellphone_edittext_update);
         etPhone = findViewById(R.id.phone_edittext_update);
 
-        updateButton = findViewById(R.id.update_data_button);
+        Button updateButton = findViewById(R.id.update_data_button);
 
         contactsRef.document(document_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -74,6 +73,8 @@ public class UpdateDataActivity extends AppCompatActivity {
                 updatedData.put("phone", etPhone.getText().toString());
 
                 contactsRef.document(document_id).update(updatedData);
+
+                finish();
             }
         });
     }

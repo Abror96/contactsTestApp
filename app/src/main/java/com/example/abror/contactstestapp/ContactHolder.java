@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 class ContactHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
     TextView tvFullName;
     TextView tvAddress;
     TextView tvEmail;
