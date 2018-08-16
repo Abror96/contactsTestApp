@@ -49,6 +49,7 @@ public class NewContactActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.save_contact:
+                // saving new contact
                 saveContact();
                 return true;
             default:

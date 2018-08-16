@@ -24,6 +24,7 @@ public class UpdateDataActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etCellphone;
     private EditText etPhone;
+    private Button updateButton;
 
     private Map<String, Object> updatedData;
 
@@ -39,17 +40,11 @@ public class UpdateDataActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
         setTitle("Update contact");
 
+        // getting extra string from contactAdapter class
         final String document_id = getIntent().getStringExtra("doc_id");
 
         updatedData = new HashMap<>();
-
-        etFullName = findViewById(R.id.fullname_editText_update);
-        etAddress = findViewById(R.id.address_editText_update);
-        etEmail = findViewById(R.id.email_edittext_update);
-        etCellphone = findViewById(R.id.cellphone_edittext_update);
-        etPhone = findViewById(R.id.phone_edittext_update);
-
-        Button updateButton = findViewById(R.id.update_data_button);
+        initViews();
 
         contactsRef.document(document_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -77,5 +72,14 @@ public class UpdateDataActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void initViews() {
+        etFullName = findViewById(R.id.fullname_editText_update);
+        etAddress = findViewById(R.id.address_editText_update);
+        etEmail = findViewById(R.id.email_edittext_update);
+        etCellphone = findViewById(R.id.cellphone_edittext_update);
+        etPhone = findViewById(R.id.phone_edittext_update);
+        updateButton = findViewById(R.id.update_data_button);
     }
 }

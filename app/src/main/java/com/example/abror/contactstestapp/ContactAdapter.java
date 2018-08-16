@@ -53,7 +53,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactHolder> {
         return contactArrayList.size();
     }
 
-
+    // search feature
     public void setFilter(ArrayList<Contact> newlist) {
         contactArrayList = new ArrayList<>();
         contactArrayList.addAll(newlist);
