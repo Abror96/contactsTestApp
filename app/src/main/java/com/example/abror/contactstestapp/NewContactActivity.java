@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -27,6 +26,9 @@ public class NewContactActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_contact);
+
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
+        setTitle("Add new contact");
 
         etFullName = findViewById(R.id.fullname_editText_add);
         etAddress = findViewById(R.id.address_editText_add);
