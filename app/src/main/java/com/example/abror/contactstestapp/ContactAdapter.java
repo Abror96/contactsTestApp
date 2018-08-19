@@ -11,11 +11,9 @@ import java.util.ArrayList;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactHolder> {
 
-    private MainActivity mainActivity;
     private ArrayList<Contact> contactArrayList;
 
-    public ContactAdapter(MainActivity mainActivity, ArrayList<Contact> contactArrayList) {
-        this.mainActivity = mainActivity;
+    public ContactAdapter(ArrayList<Contact> contactArrayList) {
         this.contactArrayList = contactArrayList;
     }
 
@@ -41,12 +39,12 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactHolder> {
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position) {
+
                 if (contactArrayList.size() != 0) {
                     Intent intent = new Intent(view.getContext() , UpdateDataActivity.class);
                     intent.putExtra("doc_id", contactArrayList.get(position).getContactId());
                     view.getContext().startActivity(intent);
                 }
-
             }
         });
     }

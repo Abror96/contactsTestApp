@@ -1,12 +1,12 @@
 package com.example.abror.contactstestapp;
 
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,6 +31,8 @@ public class UpdateDataActivity extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference contactsRef = db.collection("Contacts");
 
+    private View contextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class UpdateDataActivity extends AppCompatActivity {
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
         setTitle("Update contact");
+
+        contextView = findViewById(R.id.update_contact_view);
 
         // getting extra string from contactAdapter class
         final String document_id = getIntent().getStringExtra("doc_id");
@@ -60,14 +64,18 @@ public class UpdateDataActivity extends AppCompatActivity {
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                updatedData.put("fullname", etFullName.getText().toString());
-                updatedData.put("address", etAddress.getText().toString());
-                updatedData.put("email", etEmail.getText().toString());
-                updatedData.put("cellphone", etCellphone.getText().toString());
-                updatedData.put("phone", etPhone.getText().toString());
+                if (etFullName.getText().toString().trim().isEmpty() || etAddress.getText().toString().isEmpty()) {
+                    Snackbar.make(contextView, "Please add fullname and address", Snackbar.LENGTH_LONG).show();
+                    return;
+                }
+                updatedData.put("fullname", etFullName.getText().toString().trim());
+                updatedData.put("address", etAddress.getText().toString().trim());
+                updatedData.put("email", etEmail.getText().toString().trim());
+                updatedData.put("cellphone", etCellphone.getText().toString().trim());
+                updatedData.put("phone", etPhone.getText().toString().trim());
 
                 contactsRef.document(document_id).update(updatedData);
+                Snackbar.make(contextView, "Contact was updated", Snackbar.LENGTH_LONG).show();
 
                 finish();
             }
